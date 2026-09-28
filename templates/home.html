@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Pacewisdom - {%block title%}Home{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <h3>Pacewisdom</h3>
+        <nav>
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'job' %}">Jobs</a>
+        </nav>
+    </header>
+    <main>
+        <div>
+            {% block content%}
+            <div class="home-div">
+                <p>Hello there, If you wish to be part of our company as an employee,. view the job listsings and apply if you are interested and aligned with the requiredment...</p>
+                <a href="{%url 'job'%}"><button>view Jobs</button></a>
+            </div>
+            {% endblock %}
+        </div>
+    </main>
+    <footer>All rights reserved</footer>
+</body>
+</html>

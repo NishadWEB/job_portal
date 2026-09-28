@@ -1,0 +1,14 @@
+{% extends 'home.html' %}
+{% block title %}Application{%endblock%}
+
+{% block content%}
+{% if already_exist %}
+    {{ already_exist }}
+{% else %}
+<form action="{% url 'application_form' id %}" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form }}
+    <button class="submit-btn" type="submit">submit</button>
+</form>
+{% endif %}
+{% endblock %}
